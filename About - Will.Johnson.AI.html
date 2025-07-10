@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Will.Johnson.AI</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@400;700&display=swap');
+        body {
+            margin: 0;
+            font-family: 'Inter', Arial, sans-serif;
+            color: #fff;
+            background: #0d1122;
+            min-height: 100vh;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -2;
+            background: url('https://d41chssnpqdne.cloudfront.net/user_upload_by_module/chat_bot/files/120151275/xIkuyCTaoupXEjHT.png?Expires=1753318037&Signature=DghG7NsY7wu3M4l2UG2ZAPH3-0ia1EMAjdN4VgvHHJorb-bi8RBPIYkgDrnO1iAbS5B9MOvxQkqRSRukhEtxLua8vjQRIYRi2iR~6Jmpld52yyH-XhQJ9LNhor6rGSurq2hy-hHKjtRUmI4IAZpBJ0sFrbWvVTnE87CKeamGrXuMPtXJIQ-zcMdRCxRdRDm2kHXhy~POr2C0K0w6wlcNJ1MZIPDorE2ETEK~s1Mob5tJxjISOsqYkBgWBeGqWTl~sRbvpX8xGyE5HPfxYSJOKtq~rxJteV2LNmJ2UfV08opKRyg1ZB-sZU45YgCEhguPQ~vXYFI8oEq6norsvkj7sQ__&Key-Pair-Id=K3USGZIKWMDCSX') center center/cover no-repeat;
+            filter: brightness(0.55) blur(1.5px);
+        }
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1;
+            background: linear-gradient(120deg, rgba(14,17,44,0.77) 60%, rgba(60,10,90,0.55) 100%);
+            pointer-events: none;
+        }
+        header {
+            background: rgba(30, 20, 60, 0.80);
+            box-shadow: 0 4px 32px #8b5cf6cc;
+            color: #fff;
+            padding: 2.5rem 0 2rem 0;
+            text-align: center;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            backdrop-filter: blur(4px);
+            border-bottom: 2px solid #06b6d4;
+        }
+        nav { margin: 1rem 0; }
+        nav a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 6px #06b6d4, 0 0 2px #fff;
+            transition: color 0.2s, text-shadow 0.2s;
+        }
+        nav a:hover {
+            color: #f472b6;
+            text-shadow: 0 0 8px #f472b6, 0 0 2px #fff;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: rgba(28, 20, 48, 0.55);
+            border-radius: 22px;
+            box-shadow: 0 8px 40px #06b6d444, 0 1.5px 16px 2px #a21caf33;
+            padding: 2rem;
+            backdrop-filter: blur(12px) saturate(1.4);
+            border: 1.5px solid #3b82f6;
+        }
+        h1, h2, h3 {
+            margin-top: 0;
+            font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 12px #06b6d4, 0 2px 8px #000;
+        }
+        .about-hero {
+            text-align: center;
+            padding: 2rem 0;
+            background: rgba(34,38,70,0.42);
+            border-radius: 18px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 24px #a21caf66;
+            backdrop-filter: blur(2px);
+        }
+        .about-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            color: #7c3aed;
+            text-shadow: 0 0 16px #f472b6, 0 0 8px #06b6d4, 0 1px 1px #000;
+        }
+        .story-section {
+            background: rgba(38, 44, 80, 0.70);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 20px #a21caf55;
+            backdrop-filter: blur(2px);
+            border: 1.2px solid #06b6d4;
+        }
+        .journey-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .timeline-item {
+            background: rgba(44, 48, 80, 0.65);
+            border-radius: 14px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 16px #06b6d433;
+            border-left: 4px solid #f472b6;
+            position: relative;
+        }
+        .timeline-item h3 {
+            color: #06b6d4;
+            margin-bottom: 0.5rem;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .value-card {
+            background: rgba(44, 48, 80, 0.65);
+            border-radius: 14px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 16px #06b6d433;
+            border: 1.2px solid #7c3aed;
+        }
+        .value-card h3 {
+            color: #f472b6;
+            margin-bottom: 0.8rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1.5rem 0;
+            background: rgba(22,22,44,0.95);
+            color: #bbb;
+            margin-top: 2rem;
+            border-top-left-radius: 32px;
+            border-top-right-radius: 32px;
+            box-shadow: 0 -2px 24px #a21caf66;
+            backdrop-filter: blur(2px);
+            border-top: 2px solid #7c3aed;
+            font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 1.5px;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 1rem; }
+            .about-hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Will.Johnson.AI</h1>
+            <p>Your Remote & Contract AI Specialist</p>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="skills.html">Skills</a>
+            <a href="services.html">Services</a>
+            <a href="hire.html">Hire Me</a>
+            <a href="contact.html">Contact</a>
+            <a href="forum.html">Forum</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="about-hero">
+            <h1>About Will Johnson</h1>
+            <p>Innovative Thinker · AI Automation Expert · Remote Specialist</p>
+        </section>
+        
+        <section class="story-section">
+            <h2>My Story</h2>
+            <p>Based in Richmond, KY, I'm an innovative thinker with a deep passion for leveraging technology to streamline processes and create sustainable online income streams. My journey into the world of AI and automation began with a simple goal: achieving financial independence through smart, scalable systems.</p>
+            
+            <p>As someone who completed the Google IT Support Specialist program on Coursera, I've built a strong foundation in technology. Now, I'm focused on mastering AI tools, automation platforms like n8n, and discovering zero-cost solutions that maximize efficiency while minimizing manual effort.</p>
+        </section>
+        
+        <section class="story-section">
+            <h2>My Journey</h2>
+            <div class="journey-timeline">
+                <div class="timeline-item">
+                    <h3>Google IT Support Certification</h3>
+                    <p>Completed comprehensive training on Coursera, building a solid technical foundation</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Discovered AI & Automation</h3>
+                    <p>Began exploring ChatGPT, n8n, and other AI tools to create automated workflows</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Zero-Cost Startup Focus</h3>
+                    <p>Developing strategies to launch online businesses using free tools and cloud-based solutions</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Content Creation Journey</h3>
+                    <p>Launching automated YouTube channels and exploring AI-powered content generation</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="story-section">
+            <h2>My Values & Approach</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Innovation First</h3>
+                    <p>Always seeking cutting-edge solutions and creative approaches to challenges</p>
+                </div>
+                <div class="value-card">
+                    <h3>Resourcefulness</h3>
+                    <p>Finding zero-cost alternatives and maximizing efficiency with minimal resources</p>
+                </div>
+                <div class="value-card">
+                    <h3>Continuous Learning</h3>
+                    <p>Constantly exploring new technologies, from AI to esoteric mysteries</p>
+                </div>
+                <div class="value-card">
+                    <h3>Scalability Focus</h3>
+                    <p>Building systems designed to grow without proportional effort increase</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="story-section">
+            <h2>Beyond Technology</h2>
+            <p>My interests extend beyond just tech and automation. I'm fascinated by esoteric mysteries, conspiracy theories, and the deeper meanings behind symbols like the Philosopher's Stone and Tree of Life. This curiosity drives my innovative thinking and helps me see connections others might miss.</p>
+            
+            <p>Currently, I'm actively pursuing remote and online income opportunities, with projects ranging from automated YouTube channels for children's bedtime stories to developing AI-powered content systems. My GitHub (ThinkingCapTech) showcases my technical projects and growing portfolio.</p>
+        </section>
+    </div>
+    <footer>
+        &copy; 2025 Will.Johnson.AI · Remote AI & Automation Specialist · Built with AI
+    </footer>
+</body>
+</html>
